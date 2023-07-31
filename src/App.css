@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+/* src/App.css */
+
+/* ...estilos existentes... */
+
+input {
+  padding: 8px;
+  margin: 10px 0;
+  font-size: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button:hover {
+  background-color: #45a049;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.selected {
+  border: 2px solid #007bff;
+}
+
+/* Estilos del carrusel */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.carousel {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  height: 200px; /* Ajusta el alto fijo según tus necesidades */
+}
+
+.carousel-row {
+  display: flex;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-item {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  margin-right: 10px;
+  width: 200px; /* Ajusta el ancho fijo según tus necesidades */
+  height: 180px; /* Ajusta el alto fijo según tus necesidades */
+}
+
+.carousel-item img {
+  max-width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.carousel-item img.selected {
+  border-color: #007bff;
+}
+
+.pagination {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pagination button {
+  margin: 0 5px;
 }
